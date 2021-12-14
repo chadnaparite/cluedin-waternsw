@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\WaterNSW.Provider\Provider.WaterNSW.csproj" />
+  </ItemGroup>
+</Project>

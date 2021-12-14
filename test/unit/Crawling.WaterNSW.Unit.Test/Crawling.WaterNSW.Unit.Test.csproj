@@ -1,0 +1,7 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\WaterNSW.Core\Crawling.WaterNSW.Core.csproj" />
+    <ProjectReference Include="..\..\..\src\WaterNSW.Crawling\Crawling.WaterNSW.csproj" />
+    <ProjectReference Include="..\..\..\src\WaterNSW.Infrastructure\Crawling.WaterNSW.Infrastructure.csproj" />
+  </ItemGroup>
+</Project>
