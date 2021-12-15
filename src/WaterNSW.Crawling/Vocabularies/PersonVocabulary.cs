@@ -15,12 +15,12 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
             //TODO: Make sure that any properties mapped into CluedIn Vocabulary are not in the group.
             AddGroup("WaterNSW Person Details", group =>
             {
-                CustomerId = group.Add(new VocabularyKey("CustomerId", "Customer ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                DlwcInpaAddressId = group.Add(new VocabularyKey("DlwcInpaAddressId", "DLWC INPA Address ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
+                CustomerId = group.Add(new VocabularyKey("CustomerId", "Customer ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
+                DlwcInpaAddressId = group.Add(new VocabularyKey("DlwcInpaAddressId", "DLWC INPA Address ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
                 CustomerDate = group.Add(new VocabularyKey("CustomerDate", "Customer date", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
                 CustomerFlag = group.Add(new VocabularyKey("CustomerFlag", "Customer flag", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 Pin = group.Add(new VocabularyKey("Pin", "PIN", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
-                AddressId = group.Add(new VocabularyKey("AddressId", "Address ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
+                AddressId = group.Add(new VocabularyKey("AddressId", "Address ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
                 InpaId = group.Add(new VocabularyKey("InpaId", "INPA ID  ", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 InpaType = group.Add(new VocabularyKey("InpaType", "INPA Type", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 Title = group.Add(new VocabularyKey("Title", "Title", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
@@ -30,14 +30,14 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
                 Orders = group.Add(new VocabularyKey("Orders", "Orders", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 JobTitle = group.Add(new VocabularyKey("JobTitle", "Job Title", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 DateOfBirth = group.Add(new VocabularyKey("DateOfBirth", "Date of Birth", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                AustralianCompanyNumber = group.Add(new VocabularyKey("AustralianCompanyNumber", "Australian Company Number", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
-                AustralianBusinessNumber = group.Add(new VocabularyKey("AustralianBusinessNumber", "Australian Business Number", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
-                IndustryCode = group.Add(new VocabularyKey("IndustryCode", "Industry Code", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
+                AustralianCompanyNumber = group.Add(new VocabularyKey("AustralianCompanyNumber", "Australian Company Number", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
+                AustralianBusinessNumber = group.Add(new VocabularyKey("AustralianBusinessNumber", "Australian Business Number", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
+                IndustryCode = group.Add(new VocabularyKey("IndustryCode", "Industry Code", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
                 OrganisationType = group.Add(new VocabularyKey("OrganisationType", "Organisation type", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 InpaIdAlias = group.Add(new VocabularyKey("InpaIdAlias", "INPA ID Alias", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 Email = group.Add(new VocabularyKey("Email", "Email", VocabularyKeyDataType.Email, VocabularyKeyVisibility.Visible));
-                RowVersion = group.Add(new VocabularyKey("RowVersion", "Row version", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
-                RowReplaces = group.Add(new VocabularyKey("RowReplaces", "Row replaces", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
+                RowVersion = group.Add(new VocabularyKey("RowVersion", "Row version", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
+                RowReplaces = group.Add(new VocabularyKey("RowReplaces", "Row replaces", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
                 RowCreated = group.Add(new VocabularyKey("RowCreated", "Row created", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
                 RowExpires = group.Add(new VocabularyKey("RowExpires", "Row expires", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
                 RowDataSource = group.Add(new VocabularyKey("RowDataSource", "Row data source", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
@@ -49,7 +49,7 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
                 Salutation = group.Add(new VocabularyKey("Salutation", "Salutation", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 MiddleName = group.Add(new VocabularyKey("MiddleName", "Middle Name", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 Record = group.Add(new VocabularyKey("Record", "Record ", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                DupeGroup = group.Add(new VocabularyKey("DupeGroup", "Dupe group", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
+                DupeGroup = group.Add(new VocabularyKey("DupeGroup", "Dupe group", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
                 LicenseFlag = group.Add(new VocabularyKey("LicenseFlag", "License flag", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 LegalName = group.Add(new VocabularyKey("LegalName", "Legal name", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 Deceased = group.Add(new VocabularyKey("Deceased", "Deceased", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));

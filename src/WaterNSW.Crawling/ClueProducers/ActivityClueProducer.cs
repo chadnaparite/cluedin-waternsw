@@ -4,6 +4,7 @@ using CluedIn.Crawling.Factories;
 using CluedIn.Crawling.Helpers;
 using CluedIn.Crawling.WaterNSW.Vocabularies;
 using CluedIn.Crawling.WaterNSW.Core.Models;
+using CluedIn.Crawling.WaterNSW.Core.Constants;
 
 namespace CluedIn.Crawling.WaterNSW.ClueProducers
 {
@@ -18,17 +19,21 @@ namespace CluedIn.Crawling.WaterNSW.ClueProducers
 
         protected override Clue MakeClueImpl(Activity input, Guid accountId)
         {
+            if (string.IsNullOrEmpty(input.TransactionId))
+                return null;
+
             var activityVocabulary = new ActivityVocabulary();
             var clue = factory.Create(activityVocabulary.Grouping, input.TransactionId.ToString(), accountId);
             var data = clue.Data.EntityData;
 
-            // TODO: Uncomment or delete as appropriate for the different properties
-            // if(input.Name != null)
-            // {
-            //     data.Name = input.Name;
-            //     data.DisplayName = input.DisplayName;
-            //     data.Description = input.Description;
-            // }
+            data.Name = input.TransactionId;
+            data.DisplayName = input.TransactionId;
+            data.Description = input.TransactionId;
+
+            if (input.TransactionType != null)
+                data.Description = input.TransactionType;
+
+            factory.CreateOutgoingEntityReference(clue, WaterNSWEntities.SMS, EntityEdgeType.OwnedBy, input.TransactionId, input.TransactionId);
 
             // TODO: Example of Updated, Modified date being parsed through DateTimeOffset.
             // DateTimeOffset date;
@@ -64,8 +69,6 @@ namespace CluedIn.Crawling.WaterNSW.ClueProducers
             //     }
             // }
 
-            //TODO: Mapping data into general properties metadata bag.
-            //TODO: You should make sure as much data is mapped into specific metadata fields, rather than general .properties. bag.
             data.Properties[activityVocabulary.TransactionId] = input.TransactionId.PrintIfAvailable();
             data.Properties[activityVocabulary.Id] = input.Id.PrintIfAvailable();
             data.Properties[activityVocabulary.DateReceived] = input.DateReceived.PrintIfAvailable();

@@ -16,12 +16,12 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
             //TODO: Make sure that any properties mapped into CluedIn Vocabulary are not in the group.
             AddGroup("WaterNSW Location Details", group =>
             {
-                InpaAddressId = group.Add(new VocabularyKey("InpaAddressId", "INPA Address ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                DlwcAddressId = group.Add(new VocabularyKey("DlwcAddressId", "DLWC Address ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
+                InpaAddressId = group.Add(new VocabularyKey("InpaAddressId", "INPA Address ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
+                DlwcAddressId = group.Add(new VocabularyKey("DlwcAddressId", "DLWC Address ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
                 DlwcInpaId = group.Add(new VocabularyKey("DlwcInpaId", "DLWC INPA ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 ValidFrom = group.Add(new VocabularyKey("ValidFrom", "Valid from", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
                 ValidTo = group.Add(new VocabularyKey("ValidTo", "Valid to", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
-                AddressId = group.Add(new VocabularyKey("AddressId", "Address ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
+                AddressId = group.Add(new VocabularyKey("AddressId", "Address ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
                 UnitType = group.Add(new VocabularyKey("UnitType", "Unit type", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 UnitNumber = group.Add(new VocabularyKey("UnitNumber", "Unit number", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 UnitSuffix = group.Add(new VocabularyKey("UnitSuffix", "Unit suffix", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
@@ -57,12 +57,12 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
                 Country = group.Add(new VocabularyKey("Country", "Country", VocabularyKeyDataType.GeographyCountry, VocabularyKeyVisibility.Visible));
                 PostalServiceType = group.Add(new VocabularyKey("PostalServiceType", "Postal service type", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 PostalServiceIdentifier = group.Add(new VocabularyKey("PostalServiceIdentifier", "Postal service identifier", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                PostCode = group.Add(new VocabularyKey("PostCode", "Post Code", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
-                DeliveryPointId = group.Add(new VocabularyKey("DeliveryPointId", "Delivery Point ID", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
+                PostCode = group.Add(new VocabularyKey("PostCode", "Post Code", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
+                DeliveryPointId = group.Add(new VocabularyKey("DeliveryPointId", "Delivery Point ID", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
                 AsonDescriptor = group.Add(new VocabularyKey("AsonDescriptor", "Ason descriptor", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 AddressType = group.Add(new VocabularyKey("AddressType", "Address type", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                RowVersion = group.Add(new VocabularyKey("RowVersion", "Row version", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
-                RowReplaces = group.Add(new VocabularyKey("RowReplaces", "Row replaces", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
+                RowVersion = group.Add(new VocabularyKey("RowVersion", "Row version", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
+                RowReplaces = group.Add(new VocabularyKey("RowReplaces", "Row replaces", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
                 RowCreated = group.Add(new VocabularyKey("RowCreated", "Row created", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
                 RowExpires = group.Add(new VocabularyKey("RowExpires", "Row expires", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
                 RowDataSource = group.Add(new VocabularyKey("RowDataSource", "Row data source", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
@@ -72,8 +72,8 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
                 PSuburb = group.Add(new VocabularyKey("PSuburb", "P Suburb", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 PState = group.Add(new VocabularyKey("PState", "P State", VocabularyKeyDataType.GeographyState, VocabularyKeyVisibility.Visible));
                 PCountry = group.Add(new VocabularyKey("PCountry", "P Country", VocabularyKeyDataType.GeographyCountry, VocabularyKeyVisibility.Visible));
-                PPostCode = group.Add(new VocabularyKey("PPostCode", "P Post code", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
-                PDeliveryPoint = group.Add(new VocabularyKey("PDeliveryPoint", "P Delivery point", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
+                PPostCode = group.Add(new VocabularyKey("PPostCode", "P Post code", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
+                PDeliveryPoint = group.Add(new VocabularyKey("PDeliveryPoint", "P Delivery point", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
                 CareOf = group.Add(new VocabularyKey("CareOf", "Care of", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 PCareOf = group.Add(new VocabularyKey("PCareOf", "P Care of", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
             });

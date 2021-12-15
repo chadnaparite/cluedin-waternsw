@@ -16,14 +16,14 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
             //TODO: Make sure that any properties mapped into CluedIn Vocabulary are not in the group.
             AddGroup("WaterNSW SMS Details", group =>
             {
-                TransactionId = group.Add(new VocabularyKey("TransactionId", "Transaction ID", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
-                CustomerId = group.Add(new VocabularyKey("CustomerId", "Customer ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
+                TransactionId = group.Add(new VocabularyKey("TransactionId", "Transaction ID", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
+                CustomerId = group.Add(new VocabularyKey("CustomerId", "Customer ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
                 MessageTypeCode = group.Add(new VocabularyKey("MessageTypeCode", "Message type code", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 StartDate = group.Add(new VocabularyKey("StartDate", "Start date", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
                 CloseDate = group.Add(new VocabularyKey("CloseDate", "Close date", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
                 WaterType = group.Add(new VocabularyKey("WaterType", "Water type", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                WaterSourceCode = group.Add(new VocabularyKey("WaterSourceCode", "Water source code", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                WmzCode = group.Add(new VocabularyKey("WmzCode", "WMZ code", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
+                WaterSourceCode = group.Add(new VocabularyKey("WaterSourceCode", "Water source code", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
+                WmzCode = group.Add(new VocabularyKey("WmzCode", "WMZ code", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
                 LicenseSubcategoryId = group.Add(new VocabularyKey("LicenseSubcategoryId", "License subcategory ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 License = group.Add(new VocabularyKey("License", "License  ", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 Message = group.Add(new VocabularyKey("Message", "Message  ", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));

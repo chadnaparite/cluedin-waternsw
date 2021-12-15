@@ -4,6 +4,7 @@ using CluedIn.Crawling.Factories;
 using CluedIn.Crawling.Helpers;
 using CluedIn.Crawling.WaterNSW.Vocabularies;
 using CluedIn.Crawling.WaterNSW.Core.Models;
+using CluedIn.Crawling.WaterNSW.Core.Constants;
 
 namespace CluedIn.Crawling.WaterNSW.ClueProducers
 {
@@ -23,12 +24,17 @@ namespace CluedIn.Crawling.WaterNSW.ClueProducers
             var data = clue.Data.EntityData;
 
             // TODO: Uncomment or delete as appropriate for the different properties
-            // if(input.Name != null)
-            // {
-            //     data.Name = input.Name;
-            //     data.DisplayName = input.DisplayName;
-            //     data.Description = input.Description;
-            // }
+            if (input.MessageTypeCode != null)
+            {
+                data.Name = input.MessageTypeCode;
+                data.DisplayName = input.MessageTypeCode;
+                data.Description = input.MessageTypeCode;
+            }
+
+            factory.CreateIncomingEntityReference(clue, WaterNSWEntities.Activity, EntityEdgeType.OwnedBy, input.TransactionId, input.TransactionId.ToString());
+
+            if (input.CustomerId != null)
+                factory.CreateIncomingEntityReference(clue, EntityType.Person, EntityEdgeType.OwnedBy, input.CustomerId, input.CustomerId);
 
             // TODO: Example of Updated, Modified date being parsed through DateTimeOffset.
             // DateTimeOffset date;

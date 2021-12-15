@@ -16,17 +16,17 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
             //TODO: Make sure that any properties mapped into CluedIn Vocabulary are not in the group.
             AddGroup("WaterNSW Activity Details", group =>
             {
-                TransactionId = group.Add(new VocabularyKey("TransactionId", "Transaction ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                Id = group.Add(new VocabularyKey("Id", "ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
+                TransactionId = group.Add(new VocabularyKey("TransactionId", "Transaction ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
+                Id = group.Add(new VocabularyKey("Id", "ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
                 DateReceived = group.Add(new VocabularyKey("DateReceived", "Date received", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
                 DaReference = group.Add(new VocabularyKey("DaReference", "DA reference", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                ReferringAgencyNaid = group.Add(new VocabularyKey("ReferringAgencyNaid", "Referring agency naid", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
+                ReferringAgencyNaid = group.Add(new VocabularyKey("ReferringAgencyNaid", "Referring agency naid", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
                 ReferringAgencyName = group.Add(new VocabularyKey("ReferringAgencyName", "Referring agency name", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 ReferringAgencyContact = group.Add(new VocabularyKey("ReferringAgencyContact", "Referring agency contact", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                LicenceLocationCode = group.Add(new VocabularyKey("LicenceLocationCode", "Licence location code", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
+                LicenceLocationCode = group.Add(new VocabularyKey("LicenceLocationCode", "Licence location code", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
                 IdasDevelopmentType = group.Add(new VocabularyKey("IdasDevelopmentType", "IDAS development type", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 NotificationPeriodType = group.Add(new VocabularyKey("NotificationPeriodType", "Notification period type", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                NotifcationPeriodDays = group.Add(new VocabularyKey("NotifcationPeriodDays", "Notifcation period days", VocabularyKeyDataType.Integer, VocabularyKeyVisibility.Visible));
+                NotifcationPeriodDays = group.Add(new VocabularyKey("NotifcationPeriodDays", "Notifcation period days", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
                 SubmissionEndDate = group.Add(new VocabularyKey("SubmissionEndDate", "Submission end date", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 AmountPaid = group.Add(new VocabularyKey("AmountPaid", "Amount paid", VocabularyKeyDataType.Money, VocabularyKeyVisibility.Visible));
                 ReceiptedOn = group.Add(new VocabularyKey("ReceiptedOn", "Receipted on", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
@@ -50,7 +50,7 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
                 CaDeterminationEnteredBy = group.Add(new VocabularyKey("CaDeterminationEnteredBy", "CA determination entered by", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 CaDeterminationEnteredOn = group.Add(new VocabularyKey("CaDeterminationEnteredOn", "CA determination entered on", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));
                 PreWithdrawalStatus = group.Add(new VocabularyKey("PreWithdrawalStatus", "Pre-withdrawal status", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
-                GtaId = group.Add(new VocabularyKey("GtaId", "GTA ID", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
+                GtaId = group.Add(new VocabularyKey("GtaId", "GTA ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
                 TransactionType = group.Add(new VocabularyKey("TransactionType", "Transaction type", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 LastGtaIssued = group.Add(new VocabularyKey("LastGtaIssued", "Last GTA issued", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 CouncilLetterDated = group.Add(new VocabularyKey("CouncilLetterDated", "Council letter dated", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));

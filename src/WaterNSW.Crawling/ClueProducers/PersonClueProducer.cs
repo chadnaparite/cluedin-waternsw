@@ -4,6 +4,7 @@ using CluedIn.Crawling.Factories;
 using CluedIn.Crawling.Helpers;
 using CluedIn.Crawling.WaterNSW.Vocabularies;
 using CluedIn.Crawling.WaterNSW.Core.Models;
+using CluedIn.Crawling.WaterNSW.Core.Constants;
 
 namespace CluedIn.Crawling.WaterNSW.ClueProducers
 {
@@ -30,6 +31,15 @@ namespace CluedIn.Crawling.WaterNSW.ClueProducers
                 data.Description = input.FullName;
             }
 
+            if (input.DlwcInpaAddressId != null)
+                factory.CreateIncomingEntityReference(clue, WaterNSWEntities.Location, EntityEdgeType.OwnedBy, input.DlwcInpaAddressId, input.DlwcInpaAddressId);
+            
+            if (input.AddressId != null)
+                factory.CreateIncomingEntityReference(clue, WaterNSWEntities.Location, EntityEdgeType.OwnedBy, input.AddressId, input.AddressId);
+            
+            if (input.InpaId != null)
+                factory.CreateIncomingEntityReference(clue, WaterNSWEntities.Location, EntityEdgeType.OwnedBy, input.InpaId, input.InpaId);
+
             // TODO: Example of Updated, Modified date being parsed through DateTimeOffset.
             // DateTimeOffset date;
             // if (DateTimeOffset.TryParse(input.CreatedAt, out date) && input.CreatedAt != null){
@@ -48,7 +58,6 @@ namespace CluedIn.Crawling.WaterNSW.ClueProducers
             //     factory.CreateIncomingEntityReference(clue, EntityType.PhoneNumber, EntityEdgeType.Parent, input.WorkPhone, input.WorkPhone);
             //     data.Properties[personVocabulary.WorkPhone] = input.WorkPhone.PrintIfAvailable();
             // }
-
 
             //TODO: Example of PersonReference
             //  if (input.UpdatedBy != null)
