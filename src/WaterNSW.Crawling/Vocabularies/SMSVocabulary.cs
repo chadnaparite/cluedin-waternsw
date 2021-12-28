@@ -16,7 +16,7 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
             //TODO: Make sure that any properties mapped into CluedIn Vocabulary are not in the group.
             AddGroup("WaterNSW SMS Details", group =>
             {
-                TransactionId = group.Add(new VocabularyKey("TransactionId", "Transaction ID", VocabularyKeyDataType.Number, VocabularyKeyVisibility.Visible));
+                TransactionId = group.Add(new VocabularyKey("TransactionId", "Transaction ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
                 CustomerId = group.Add(new VocabularyKey("CustomerId", "Customer ID", VocabularyKeyDataType.Identifier, VocabularyKeyVisibility.Visible));
                 MessageTypeCode = group.Add(new VocabularyKey("MessageTypeCode", "Message type code", VocabularyKeyDataType.Text, VocabularyKeyVisibility.Visible));
                 StartDate = group.Add(new VocabularyKey("StartDate", "Start date", VocabularyKeyDataType.DateTime, VocabularyKeyVisibility.Visible));

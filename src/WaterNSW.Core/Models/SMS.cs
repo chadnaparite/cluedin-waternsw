@@ -5,7 +5,7 @@ namespace CluedIn.Crawling.WaterNSW.Core.Models
 {
     public class SMS 
     {
-        public int TransactionId { get; set; }
+        public string TransactionId { get; set; }
         public string CustomerId { get; set; }
         public string MessageTypeCode { get; set; }
         public DateTime StartDate { get; set; }

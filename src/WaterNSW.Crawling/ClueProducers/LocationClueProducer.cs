@@ -36,7 +36,7 @@ namespace CluedIn.Crawling.WaterNSW.ClueProducers
             if (input.InpaAddressId != null)
                 factory.CreateIncomingEntityReference(clue, EntityType.Person, EntityEdgeType.OwnedBy, input.InpaAddressId, input.InpaAddressId);
             
-            if (input.InpaAddressId != null)
+            if (input.DlwcInpaId != null)
                 factory.CreateIncomingEntityReference(clue, EntityType.Person, EntityEdgeType.OwnedBy, input.DlwcInpaId, input.DlwcInpaId);
 
             // TODO: Example of Updated, Modified date being parsed through DateTimeOffset.
