@@ -24,8 +24,10 @@ jobs:
     - name: Test
       run: dotnet test --no-restore --verbosity normal
     - name: Publish
-      uses: brandedoutcast/publish-nuget@v2.5.4
+      uses: brandedoutcast/publish-nuget@v2.5.5
       with:
         PROJECT_FILE_PATH: src/WaterNSW.Crawling/Crawling.WaterNSW.csproj
+        PACKAGE_NAME: CluedIn.Crawling.WaterNSW
+        VERSION_REGEX: ‘^\s*<Version>(.*)<\/Version>\s*$’
+        TAG_FORMAT: ‘*’
         NUGET_KEY: ${{secrets.NUGET_API_KEY}}
-        VERSION_REGEX: ^\s*<Version>(.*)<\/Version>$
