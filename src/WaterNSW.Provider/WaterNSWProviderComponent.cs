@@ -8,6 +8,8 @@ using CluedIn.Crawling.WaterNSW.Infrastructure.Installers;
 // 
 using ComponentHost;
 using CluedIn.Core.Server;
+using Microsoft.Extensions.Logging;
+using CluedIn.Provider.WaterNSW.Installers;
 
 namespace CluedIn.Provider.WaterNSW
 {
@@ -24,14 +26,14 @@ namespace CluedIn.Provider.WaterNSW
 
         public override void Start()
         {
+            Log.LogInformation("[WaterNSW] Begin CluedIn.Provider.WaterNSW.Start");
+
             Container.Install(new InstallComponents());
-            var asm = System.Reflection.Assembly.GetExecutingAssembly();
-            Container.Register(Types.FromAssembly(asm).BasedOn<IProvider>().WithServiceFromInterface().If(t => !t.IsAbstract).LifestyleSingleton());
-            Container.Register(Types.FromAssembly(asm).BasedOn<IEntityActionBuilder>().WithServiceFromInterface().If(t => !t.IsAbstract).LifestyleSingleton());
-
-
+            Container.Install(new WaterNSWRelatedEntitiesInstaller());
 
             State = ServiceState.Started;
+
+            Log.LogInformation("[WaterNSW] End CluedIn.Provider.WaterNSW.Start");
         }
 
         public override void Stop()
