@@ -11,7 +11,7 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
             VocabularyName = "WaterNSW SMS"; 
             KeyPrefix      = "waternsw.sms"; 
             KeySeparator   = ".";
-            Grouping       = WaterNSWEntities.SMS; // TODO: Make sure EntityType is correct.
+            Grouping       = EntityType.Sms; // TODO: Make sure EntityType is correct.
 
             //TODO: Make sure that any properties mapped into CluedIn Vocabulary are not in the group.
             AddGroup("WaterNSW SMS Details", group =>

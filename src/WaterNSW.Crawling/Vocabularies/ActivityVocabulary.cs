@@ -11,7 +11,7 @@ namespace CluedIn.Crawling.WaterNSW.Vocabularies
             VocabularyName = "WaterNSW Activity"; 
             KeyPrefix      = "waternsw.activity"; 
             KeySeparator   = ".";
-            Grouping       = WaterNSWEntities.Activity; // TODO: Make sure EntityType is correct.
+            Grouping       = EntityType.Activity; // TODO: Make sure EntityType is correct.
 
             //TODO: Make sure that any properties mapped into CluedIn Vocabulary are not in the group.
             AddGroup("WaterNSW Activity Details", group =>
